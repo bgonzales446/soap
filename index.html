@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aura Bio | Boticario Botánico &amp; Herbolaria Nocturna Escultural</title>
+<!-- Google Fonts: Bodoni Moda, Cinzel Decorative & EB Garamond & Space Grotesk -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400&amp;family=Cinzel+Decorative:wght@400;700;900&amp;family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=Space+Grotesk:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config conforming to Design Theme -->
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#e9c176",
+          "primary-container": "#c5a059",
+          "on-primary": "#412d00",
+          "secondary": "#adcebe",
+          "secondary-container": "#304d40",
+          "on-secondary": "#19362b",
+          "surface": "#121413",
+          "surface-container": "#1e201f",
+          "surface-container-low": "#1a1c1b",
+          "surface-container-high": "#282a29",
+          "surface-container-highest": "#333534",
+          "surface-container-lowest": "#0d0f0e",
+          "background": "#0d0f0e",
+          "on-background": "#e2e3e0",
+          "on-surface": "#e2e3e0",
+          "on-surface-variant": "#d1c5b4",
+          "outline": "#9a8f80",
+          "outline-variant": "#4e4639",
+          "tertiary": "#feb2bc",
+          "tertiary-container": "#5f2b34",
+          "on-tertiary": "#522029",
+          "emerald-moss": "#1E4535",
+          "gold-burnished": "#dfba73",
+        },
+        fontFamily: {
+          serif: ['"Bodoni Moda"', 'serif'],
+          gothic: ['"Cinzel Decorative"', 'serif'],
+          garamond: ['"EB Garamond"', 'serif'],
+          sans: ['"Space Grotesk"', 'sans-serif'],
+        }
+      }
+    }
+  }
+</script>
+<!-- Custom Gothic Victorian Styles & Finishes -->
+<style data-purpose="typography">
+    body {
+      font-family: 'EB Garamond', serif;
+      background-color: #0d0f0e;
+      color: #e2e3e0;
+      letter-spacing: 0.01em;
+    }
+    h1, h2, h3, h4, .font-serif {
+      font-family: 'Bodoni Moda', serif;
+    }
+    .font-gothic {
+      font-family: 'Cinzel Decorative', serif;
+    }
+    .font-label {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    /* Subtle parchment noise / chiaroscuro borders */
+    .apothecary-border {
+      border: 1px solid rgba(197, 160, 89, 0.28);
+      position: relative;
+    }
+    .apothecary-border::before {
+      content: '';
+      position: absolute;
+      inset: 3px;
+      border: 1px solid rgba(197, 160, 89, 0.12);
+      pointer-events: none;
+      border-radius: inherit;
+    }
+    .btn-gold {
+      background: linear-gradient(135deg, #e9c176 0%, #c5a059 100%);
+      color: #121413;
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 18px -2px rgba(233, 193, 118, 0.25);
+    }
+    .btn-gold:hover {
+      background: linear-gradient(135deg, #f7d692 0%, #d8b264 100%);
+      box-shadow: 0 8px 25px 0 rgba(233, 193, 118, 0.45);
+      transform: translateY(-2px);
+    }
+    .btn-obsidian {
+      background-color: #1a1c1b;
+      color: #e9c176;
+      border: 1px solid #4e4639;
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .btn-obsidian:hover {
+      border-color: #e9c176;
+      background-color: #282a29;
+      box-shadow: 0 0 15px rgba(233, 193, 118, 0.2);
+      transform: translateY(-1px);
+    }
+</style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface antialiased selection:bg-primary selection:text-on-primary">
+<!-- BEGIN: AnnouncementBar -->
+<aside class="bg-surface-container-lowest text-primary text-xs font-label tracking-[0.2em] uppercase py-2.5 px-4 text-center border-b border-outline-variant/60" data-purpose="announcement-bar">
+<div class="max-w-7xl mx-auto flex items-center justify-center gap-3">
+<span class="inline-flex items-center justify-center w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<p>Rituales consagrados en frío <span class="mx-3 opacity-40 text-outline">✦</span> Boticario Libre de Plástico &amp; Saponificación Lenta Nocturna <span class="mx-3 opacity-40 text-outline">✦</span> Envíos mayores a $45</p>
+</div>
+</aside>
+<!-- END: AnnouncementBar -->
+<!-- BEGIN: MainHeader -->
+<header class="sticky top-0 z-50 bg-[#0d0f0e]/95 backdrop-blur-md border-b border-outline-variant/50 transition-all duration-300" data-purpose="site-navigation">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-20">
+<!-- Left: Navigation Links -->
+<nav aria-label="Navegación principal" class="hidden lg:flex items-center space-x-8 text-xs font-label uppercase tracking-[0.18em] text-on-surface-variant">
+<a class="hover:text-primary transition-colors duration-200" href="#colecciones">Colecciones</a>
+<a class="hover:text-primary transition-colors duration-200" href="#filosofia">Herbolaria Arcana</a>
+<a class="hover:text-primary transition-colors duration-200" href="#spotlight">Boticario</a>
+<a class="hover:text-primary transition-colors duration-200" href="#impacto">Manifiesto Zero Waste</a>
+</nav>
+<!-- Center: Brand Logo -->
+<div class="flex-shrink-0 flex items-center gap-2">
+<a class="flex items-center gap-2.5 group" href="#">
+<div class="w-8 h-8 rounded-full border border-primary/50 flex items-center justify-center group-hover:border-primary transition-colors duration-300">
+<svg class="w-4 h-4 text-primary transition-transform group-hover:rotate-45 duration-500" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
+<path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+</svg>
+</div>
+<span class="font-gothic text-2xl sm:text-3xl tracking-[0.18em] uppercase font-bold text-primary">Aura Bio</span>
+</a>
+</div>
+<!-- Right: Actions & Cart -->
+<div class="flex items-center space-x-4">
+<!-- Subtle Search Bar -->
+<div class="relative hidden sm:block">
+<input class="bg-surface-container-low text-xs text-on-surface rounded-full pl-8 pr-4 py-2 w-36 lg:w-48 focus:outline-none focus:ring-1 focus:ring-primary border border-outline-variant/60 placeholder-on-surface-variant/50 transition-all font-sans" placeholder="Buscar elixires..." type="text"/>
+<svg class="w-3.5 h-3.5 absolute left-3 top-2.5 text-primary/70" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<!-- Language Selector -->
+<div class="flex items-center text-[10px] font-label font-semibold text-on-surface-variant bg-surface-container-low rounded-full p-1 border border-outline-variant/60">
+<button class="px-2.5 py-0.5 rounded-full bg-primary text-on-primary font-bold shadow-xs">ES</button>
+<button class="px-2.5 py-0.5 rounded-full hover:text-primary">EN</button>
+</div>
+<!-- Cart Button -->
+<button class="relative inline-flex items-center gap-2 bg-surface-container-low hover:bg-surface-container border border-outline-variant/70 hover:border-primary/60 text-primary px-4 py-2 rounded-full text-xs font-label tracking-wider transition-all" data-purpose="cart-drawer-trigger">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span class="uppercase">Cesta</span>
+<span class="w-4 h-4 rounded-full bg-primary text-on-primary flex items-center justify-center text-[9px] font-bold">2</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<!-- END: MainHeader -->
+<main>
+<!-- BEGIN: HeroSection -->
+<section class="relative pt-14 pb-24 lg:pt-24 lg:pb-36 overflow-hidden border-b border-outline-variant/40 bg-radial from-[#1a1c1b] via-[#121413] to-[#0d0f0e]" data-purpose="hero-banner">
+<!-- Subtle decorative corner glyphs -->
+<div class="absolute top-6 left-6 text-primary/20 font-gothic text-2xl select-none hidden lg:block">⚜</div>
+<div class="absolute top-6 right-6 text-primary/20 font-gothic text-2xl select-none hidden lg:block">⚜</div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+<!-- Hero Text Content -->
+<div class="lg:col-span-6 space-y-6 text-center lg:text-left">
+<div class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-surface-container border border-primary/30 text-primary text-[11px] tracking-[0.2em] uppercase font-label">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span> Alquimia Botánica &amp; Arte Escultórico Oscuro
+            </div>
+<h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-primary font-normal leading-[1.12] tracking-wide">
+              La naturaleza arcana <br class="hidden sm:inline"/>esculpida para tu piel.
+            </h1>
+<p class="text-base sm:text-lg text-on-surface-variant max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
+              Obras de arte botánicas biodegradables nacidas en el silencio del gabinete boticario. Elaboradas artesanalmente con maceraciones en frío, carbón activado, resinas místicas y extractos florales puros para consagrar tu baño cotidiano en un ritual ceremonial.
+            </p>
+<div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-3">
+<a class="btn-gold w-full sm:w-auto px-8 py-3.5 rounded-full text-xs font-label uppercase tracking-[0.16em] font-bold text-center" href="#colecciones">
+                Explorar Grimorio Botánico
+              </a>
+<a class="btn-obsidian w-full sm:w-auto px-8 py-3.5 rounded-full text-xs font-label uppercase tracking-[0.16em] font-semibold text-center" href="#filosofia">
+                Descubrir mi Esencia (Quiz)
+              </a>
+</div>
+<!-- Value Highlights Metrics -->
+<div class="grid grid-cols-3 gap-4 pt-8 border-t border-outline-variant/50">
+<div>
+<p class="font-serif text-2xl lg:text-3xl text-primary font-semibold">100%</p>
+<p class="text-[11px] font-label text-on-surface-variant/70 uppercase tracking-widest mt-1">Biodegradable</p>
+</div>
+<div>
+<p class="font-serif text-2xl lg:text-3xl text-primary font-semibold">60+</p>
+<p class="text-[11px] font-label text-on-surface-variant/70 uppercase tracking-widest mt-1">Rituales / Barra</p>
+</div>
+<div>
+<p class="font-serif text-2xl lg:text-3xl text-primary font-semibold">0%</p>
+<p class="text-[11px] font-label text-on-surface-variant/70 uppercase tracking-widest mt-1">Plásticos &amp; Sulfatos</p>
+</div>
+</div>
+</div>
+<!-- Hero Visual Showcase with Sculptural Shapes Cards -->
+<div class="lg:col-span-6 relative">
+<div class="relative mx-auto max-w-md lg:max-w-none">
+<!-- Main Feature Image (Dark Victorian Soap IMAGE_6) -->
+<div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-2 border-outline-variant/60 bg-surface-container aspect-square apothecary-border">
+<img alt="Dark gothic victorian botanical apothecary soap, handcrafted textured black charcoal and dried dark herbs artisan bar soap sculpted with ornate antique vintage filigree patterns, resting on dark weathered slate stone" class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdihMJLnOSIrGYXPx3U_Qxg0zPzjUbHIFFp--RSEG1j_OjDYubOQg41rdLfFJkrg_s8s1nCiwA0gTbFE-zSUKh5bVE8f15cKO3a6zOiQ9Iff-NYFVd-NKbcV1qKt6fnLNv6lq5xMpVYTFo4VhtOfjzquR9hfKT2lIaqD9iyef4KXfZ9COmEZ-qZGDm0qma5OiWoQyEVq_7rICueFn4NNb8W3-jWBwA-O-xtA2f2QCSugutebr-ZgyBBw"/>
+<div class="absolute bottom-4 left-4 right-4 bg-surface-container-lowest/90 backdrop-blur-md p-4 rounded-xl border border-primary/30 shadow-2xl flex items-center justify-between">
+<div>
+<span class="text-[9px] font-label font-bold tracking-[0.25em] text-tertiary uppercase">Boticario de Medianoche</span>
+<h4 class="font-serif text-base font-medium text-on-surface">Flor Negra: Lavanda &amp; Carbón Silvestre</h4>
+</div>
+<span class="text-sm font-label font-bold text-primary bg-surface-container px-3 py-1 rounded-full border border-primary/20">$12 USD</span>
+</div>
+</div>
+<!-- Floating Sculpture Pill 1: Luna -->
+<div class="absolute -top-5 -left-5 z-20 bg-surface-container/95 backdrop-blur-md px-4 py-2.5 rounded-xl shadow-2xl border border-primary/40 flex items-center gap-3 hidden sm:flex">
+<div class="w-8 h-8 rounded-full bg-primary/20 border border-primary/40 text-primary flex items-center justify-center font-serif text-sm">
+                ☽
+              </div>
+<div>
+<p class="text-xs font-label tracking-wider uppercase text-primary font-bold">Fase Lunar</p>
+<p class="text-[11px] text-on-surface-variant">Carbón &amp; Eucalipto</p>
+</div>
+</div>
+<!-- Floating Sculpture Pill 2: 5 Formas Esculpidas -->
+<div class="absolute -bottom-6 -right-4 z-20 bg-surface-container/95 backdrop-blur-md p-4 rounded-xl shadow-2xl border border-outline-variant/80 hidden sm:block max-w-[220px]">
+<p class="text-[10px] font-label font-semibold tracking-[0.2em] text-primary uppercase mb-2">5 Formas Arcanas</p>
+<div class="flex items-center space-x-2">
+<span class="w-7 h-7 rounded-lg bg-surface-container-high border border-outline-variant flex items-center justify-center text-xs text-primary" title="Flor">⚜</span>
+<span class="w-7 h-7 rounded-lg bg-surface-container-high border border-outline-variant flex items-center justify-center text-xs text-primary" title="Luna">☽</span>
+<span class="w-7 h-7 rounded-lg bg-surface-container-high border border-outline-variant flex items-center justify-center text-xs text-primary" title="Corazón">❦</span>
+<span class="w-7 h-7 rounded-lg bg-surface-container-high border border-outline-variant flex items-center justify-center text-xs text-primary" title="Estrella">✦</span>
+<span class="w-7 h-7 rounded-lg bg-surface-container-high border border-outline-variant flex items-center justify-center text-xs text-primary" title="Gota">💧</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: CollectionSwitcher -->
+<section class="py-24 bg-surface-container-lowest border-b border-outline-variant/40" data-purpose="collections-interactive-tabs" id="colecciones">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Section Header -->
+<div class="text-center max-w-2xl mx-auto mb-14">
+<span class="text-xs uppercase font-label font-semibold text-primary tracking-[0.24em]">Herbolaria &amp; Gabinete de Curiosidades</span>
+<h2 class="font-serif text-3xl sm:text-4xl text-on-surface mt-2 font-normal">Nuestras 5 Colecciones Esculturales</h2>
+<div class="w-16 h-px bg-primary/40 mx-auto my-3"></div>
+<p class="text-on-surface-variant text-sm mt-2 font-light">Cada silueta ha sido consagrada para transmutar tu piel y templar el espíritu, aunando botánica ritual y anatomía táctil.</p>
+</div>
+<!-- Botanical Tabs Navigation -->
+<div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-14" role="tablist">
+<button class="px-5 py-2.5 rounded-full text-xs font-label uppercase tracking-wider bg-primary text-on-primary font-bold shadow-md flex items-center gap-2 border border-primary">
+<span>☽</span> Luna: Carbón &amp; Eucalipto
+          </button>
+<button class="px-5 py-2.5 rounded-full text-xs font-label uppercase tracking-wider bg-surface-container-low text-on-surface-variant hover:text-primary hover:border-primary/50 border border-outline-variant/70 transition-all flex items-center gap-2">
+<span>⚜</span> Flor: Lavanda &amp; Calma
+          </button>
+<button class="px-5 py-2.5 rounded-full text-xs font-label uppercase tracking-wider bg-surface-container-low text-on-surface-variant hover:text-primary hover:border-primary/50 border border-outline-variant/70 transition-all flex items-center gap-2">
+<span>❦</span> Corazón: Cacao &amp; Vainilla
+          </button>
+<button class="px-5 py-2.5 rounded-full text-xs font-label uppercase tracking-wider bg-surface-container-low text-on-surface-variant hover:text-primary hover:border-primary/50 border border-outline-variant/70 transition-all flex items-center gap-2">
+<span>✦</span> Estrella: Cítricos &amp; Vit C
+          </button>
+<button class="px-5 py-2.5 rounded-full text-xs font-label uppercase tracking-wider bg-surface-container-low text-on-surface-variant hover:text-primary hover:border-primary/50 border border-outline-variant/70 transition-all flex items-center gap-2">
+<span>💧</span> Gota: Aloe &amp; Té Verde
+          </button>
+</div>
+<!-- Featured Collection Detail Card (Focused on 'Luna' with Image 3) -->
+<div class="bg-surface-container-low rounded-3xl p-6 sm:p-10 shadow-2xl border border-outline-variant/70 max-w-5xl mx-auto apothecary-border">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+<!-- Left: Featured Soap Visual (Image 3) -->
+<div class="md:col-span-5 relative">
+<div class="rounded-xl overflow-hidden aspect-square border border-primary/30 bg-surface-container-lowest">
+<img alt="Artisanal cold-processed organic textured bar soap in celestial crescent moon shape, deep charcoal and eucalyptus indigo swirls, marble surface" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AEtjO1VL-uB5TWQUXVVDAZEMdBY3l_ctf0aeLjg3tEKFAxejelUhoOdA7J-9AWUqFD47B6BFHL_VsIt51AIJWAzk5YWxAIM4leGL9A9TGa01N0j-yI8_imo1XHVnmvz8nSI8-4xUeFTc4NbOPI87GyBOod5-Ln3_0zSRNT9B89xnfCqfueNyzO4xmc9L_1EWiWkYHXfwaQUWbi45AtJ3YS0uVeAh46gJGlQueuhRVa47wWA5EprKKvsaRsrbfbUh"/>
+</div>
+<span class="absolute top-3 left-3 bg-surface-container-lowest/90 border border-primary/40 text-primary text-[9px] font-label font-bold uppercase tracking-widest py-1 px-3 rounded-full backdrop-blur-xs">
+                Edición Celestial
+              </span>
+</div>
+<!-- Right: Product Information & Companion Routine -->
+<div class="md:col-span-7 space-y-5">
+<div class="flex items-center justify-between">
+<span class="text-xs uppercase tracking-[0.2em] font-label font-semibold text-tertiary">Colección Celestial Arcana</span>
+<span class="text-2xl font-serif font-bold text-primary">$12.00 USD</span>
+</div>
+<div>
+<h3 class="font-serif text-3xl font-normal text-on-surface">Luna Creciente: Carbón Activado &amp; Eucalipto</h3>
+<p class="text-xs font-label text-on-surface-variant/70 mt-1 uppercase tracking-wider">Jabón purificante en barra para rostro y cuerpo (120g)</p>
+</div>
+<!-- Scent & Benefit Badges -->
+<div class="flex flex-wrap gap-2 pt-1">
+<span class="bg-surface-container text-primary border border-outline-variant text-xs px-3 py-1 rounded-full font-label">Aroma: Eucalipto &amp; Menta Silvestre</span>
+<span class="bg-surface-container text-primary border border-outline-variant text-xs px-3 py-1 rounded-full font-label">Acción: Desintoxicante &amp; Poros Claros</span>
+<span class="bg-surface-container text-primary border border-outline-variant text-xs px-3 py-1 rounded-full font-label">Piel: Grasa a Mixta</span>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed font-light">
+                Esculpido a mano bajo la forma astronómica de la luna creciente para una anatomía que se funde en las palmas. Combina carbón activado vegetal para drenar toxinas con aceites esenciales de eucalipto que despejan la mente y renuevan el halo energético del baño.
+              </p>
+<!-- Companion Line Checklist -->
+<div class="pt-3 border-t border-outline-variant/40">
+<p class="text-xs font-label font-semibold text-primary uppercase tracking-[0.16em] mb-2">Rutina Sólida Boticaria:</p>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs text-on-surface-variant">
+<div class="flex items-center gap-1.5 bg-surface-container p-2.5 rounded-lg border border-outline-variant/60 font-sans">
+<span class="text-primary font-bold">✓</span> Champú Sólido Carbón
+                  </div>
+<div class="flex items-center gap-1.5 bg-surface-container p-2.5 rounded-lg border border-outline-variant/60 font-sans">
+<span class="text-primary font-bold">✓</span> Acondicionador Menta
+                  </div>
+<div class="flex items-center gap-1.5 bg-surface-container p-2.5 rounded-lg border border-outline-variant/60 font-sans">
+<span class="text-primary font-bold">✓</span> Manteca Facial Purificante
+                  </div>
+</div>
+</div>
+<!-- CTA Button -->
+<div class="pt-2 flex flex-col sm:flex-row gap-3">
+<button class="btn-gold flex-1 py-3 px-6 rounded-full text-xs font-label uppercase tracking-widest font-bold text-center flex items-center justify-center gap-2">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M12 6v6m0 0v6m0-6h6m-6 0H6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                  Consagrar al Carrito
+                </button>
+<button class="btn-obsidian px-5 py-3 rounded-full text-xs font-label uppercase tracking-wider font-semibold text-primary">
+                  Ver Kit Completo ($32)
+                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: CollectionSwitcher -->
+<!-- BEGIN: SpotlightProduct -->
+<section class="py-24 bg-surface-container-low border-b border-outline-variant/40" data-purpose="product-spotlight" id="spotlight">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+<!-- Left Column: Macro Botanical Soap Image (Image 6 chiaroscuro) -->
+<div class="lg:col-span-6">
+<div class="relative rounded-2xl overflow-hidden shadow-2xl border border-primary/30 group apothecary-border">
+<img alt="Dark gothic victorian botanical apothecary soap, handcrafted textured black charcoal and dried dark herbs artisan bar soap sculpted with ornate antique vintage filigree patterns, resting on dark weathered slate stone, dimly lit with moody baroque chiaroscuro lighting" class="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdihMJLnOSIrGYXPx3U_Qxg0zPzjUbHIFFp--RSEG1j_OjDYubOQg41rdLfFJkrg_s8s1nCiwA0gTbFE-zSUKh5bVE8f15cKO3a6zOiQ9Iff-NYFVd-NKbcV1qKt6fnLNv6lq5xMpVYTFo4VhtOfjzquR9hfKT2lIaqD9iyef4KXfZ9COmEZ-qZGDm0qma5OiWoQyEVq_7rICueFn4NNb8W3-jWBwA-O-xtA2f2QCSugutebr-ZgyBBw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-surface-container-lowest/20 to-transparent pointer-events-none"></div>
+<div class="absolute bottom-6 left-6 right-6 text-on-surface">
+<span class="text-[10px] font-label uppercase tracking-[0.24em] text-primary font-bold">Chiaroscuro &amp; Alquimia</span>
+<p class="font-serif text-xl sm:text-2xl mt-1 text-primary">Curación Lenta en Frío por 45 Noches</p>
+</div>
+</div>
+</div>
+<!-- Right Column: Product Attributes & Craftsmanship Details -->
+<div class="lg:col-span-6 space-y-6">
+<div>
+<span class="text-xs uppercase font-label font-semibold text-primary tracking-[0.24em]">El Producto Consagrado</span>
+<h2 class="font-serif text-3xl sm:text-4xl text-on-surface font-normal mt-2 leading-tight">
+                Jabón en Barra Esculpido: Una experiencia mística irrepetible.
+              </h2>
+</div>
+<p class="text-on-surface-variant text-sm sm:text-base leading-relaxed font-light">
+              Nuestros jabones no son meros limpiadores industriales; son esculturas biológicas formuladas para hidratar con la glicerina vegetal pura retenida de manera silvestre durante las semanas de maduración en penumbra.
+            </p>
+<!-- 4 Structured Pillar Attributes -->
+<div class="space-y-3.5 pt-2">
+<div class="flex items-start gap-4 p-4 rounded-xl bg-surface-container border border-outline-variant/60">
+<div class="w-10 h-10 rounded-full bg-surface-container-high border border-primary/30 flex-shrink-0 flex items-center justify-center text-primary font-serif text-lg">
+                  🜁
+                </div>
+<div>
+<h4 class="text-sm font-serif font-medium text-primary">Saponificación Ancestral en Frío</h4>
+<p class="text-xs text-on-surface-variant/80 mt-0.5 font-light">Conserva intactos los fito-nutrientes, lípidos y vitaminas de los aceites prensados de oliva extra virgen y laurel bio.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 rounded-xl bg-surface-container border border-outline-variant/60">
+<div class="w-10 h-10 rounded-full bg-surface-container-high border border-primary/30 flex-shrink-0 flex items-center justify-center text-primary font-serif text-lg">
+                  ⚗️
+                </div>
+<div>
+<h4 class="text-sm font-serif font-medium text-primary">Pureza Total de Laboratorio Oscuro</h4>
+<p class="text-xs text-on-surface-variant/80 mt-0.5 font-light">Libre de sulfatos agresivos, fragancias de síntesis y derivados petroquímicos. Espuma de terciopelo lograda con saponinas botánicas.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 rounded-xl bg-surface-container border border-outline-variant/60">
+<div class="w-10 h-10 rounded-full bg-surface-container-high border border-primary/30 flex-shrink-0 flex items-center justify-center text-primary font-serif text-lg">
+                  📜
+                </div>
+<div>
+<h4 class="text-sm font-serif font-medium text-primary">Envoltorio Victoriano con Semillas Nativas</h4>
+<p class="text-xs text-on-surface-variant/80 mt-0.5 font-light">Papel de fibra de algodón sellado a mano con tinta de nogal, incrustado con semillas de lavanda y amapola silvestre listas para germinar.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 rounded-xl bg-surface-container border border-outline-variant/60">
+<div class="w-10 h-10 rounded-full bg-surface-container-high border border-primary/30 flex-shrink-0 flex items-center justify-center text-primary font-serif text-lg">
+                  ⌛
+                </div>
+<div>
+<h4 class="text-sm font-serif font-medium text-primary">Rendimiento Extendido: Más de 60 Baños</h4>
+<p class="text-xs text-on-surface-variant/80 mt-0.5 font-light">Fórmula densa curada en cámara seca que no se diluye prematuramente, reemplazando con dignidad tres frascos plásticos comunes.</p>
+</div>
+</div>
+</div>
+<div class="pt-4 flex items-center gap-6">
+<button class="btn-gold px-8 py-3.5 rounded-full text-xs font-label uppercase tracking-widest font-bold">
+                Comprar Colección Flor ($12)
+              </button>
+<div class="text-xs font-label text-on-surface-variant/70">
+<span>Cosecha limitada de lote: <strong class="text-primary font-bold">48 piezas</strong></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: SpotlightProduct -->
+<!-- BEGIN: SustainabilityGrid -->
+<section class="py-20 bg-surface-container-lowest text-on-surface border-b border-outline-variant/40" data-purpose="sustainability-commitments" id="impacto">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<span class="text-xs uppercase font-label font-semibold text-primary tracking-[0.24em]">El Pacto Nocturno</span>
+<h2 class="font-serif text-3xl sm:text-4xl mt-2 font-normal text-on-surface">Manifiesto Ético Aura Bio</h2>
+<div class="w-16 h-px bg-primary/40 mx-auto my-3"></div>
+<p class="text-on-surface-variant text-sm mt-2 font-light">Honramos los ciclos eternos de la tierra devota, devolviéndole en humus y pureza todo lo que de ella tomamos.</p>
+</div>
+<!-- 4 Columns Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Column 1 -->
+<div class="bg-surface-container-low p-6 rounded-2xl border border-outline-variant/60 flex flex-col items-start space-y-3 hover:border-primary/50 transition-colors">
+<div class="w-12 h-12 rounded-xl bg-surface-container border border-primary/30 flex items-center justify-center text-primary font-serif text-xl">
+              ☥
+            </div>
+<h3 class="font-serif text-lg font-medium text-primary">100% Zero Waste</h3>
+<p class="text-xs text-on-surface-variant/80 leading-relaxed font-light">
+              Cero residuos al abismo. Cajas compostables selladas con ceras vegetales y cordeles de cáñamo natural sin blanquear.
+            </p>
+</div>
+<!-- Column 2 -->
+<div class="bg-surface-container-low p-6 rounded-2xl border border-outline-variant/60 flex flex-col items-start space-y-3 hover:border-primary/50 transition-colors">
+<div class="w-12 h-12 rounded-xl bg-surface-container border border-primary/30 flex items-center justify-center text-primary font-serif text-xl">
+              🜃
+            </div>
+<h3 class="font-serif text-lg font-medium text-primary">Cruelty-Free &amp; Vegano</h3>
+<p class="text-xs text-on-surface-variant/80 leading-relaxed font-light">
+              Nunca probado en criatura viva alguna. 100% exento de ceras de colmena, carmín o derivados de origen animal.
+            </p>
+</div>
+<!-- Column 3 -->
+<div class="bg-surface-container-low p-6 rounded-2xl border border-outline-variant/60 flex flex-col items-start space-y-3 hover:border-primary/50 transition-colors">
+<div class="w-12 h-12 rounded-xl bg-surface-container border border-primary/30 flex items-center justify-center text-primary font-serif text-xl">
+              🜄
+            </div>
+<h3 class="font-serif text-lg font-medium text-primary">Ahorro Hídrico Real</h3>
+<p class="text-xs text-on-surface-variant/80 leading-relaxed font-light">
+              Fórmulas anhidras sólidas: no trasladamos agua embotellada, ahorrando el 85% de la huella carbónica en distribución.
+            </p>
+</div>
+<!-- Column 4 -->
+<div class="bg-surface-container-low p-6 rounded-2xl border border-outline-variant/60 flex flex-col items-start space-y-3 hover:border-primary/50 transition-colors">
+<div class="w-12 h-12 rounded-xl bg-surface-container border border-primary/30 flex items-center justify-center text-primary font-serif text-xl">
+              🜂
+            </div>
+<h3 class="font-serif text-lg font-medium text-primary">1 Pedido = 1 Árbol</h3>
+<p class="text-xs text-on-surface-variant/80 leading-relaxed font-light">
+              Consagramos la siembra de un roble o pino autóctono con cada botánica adquirida en nuestro santuario digital.
+            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: SustainabilityGrid -->
+<!-- BEGIN: SocialProof -->
+<section class="py-24 bg-surface-container-low border-b border-outline-variant/40" data-purpose="customer-reviews" id="filosofia">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Score Header -->
+<div class="text-center max-w-xl mx-auto mb-14">
+<div class="flex items-center justify-center gap-1.5 text-primary mb-2 text-sm">
+<span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+</div>
+<h2 class="font-serif text-3xl font-medium text-on-surface">4.9 / 5 en más de 2,500 testimonios</h2>
+<p class="text-xs font-label uppercase tracking-[0.2em] text-on-surface-variant/70 mt-1">Crónicas del Registro Boticario</p>
+</div>
+<!-- Reviews Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<article class="bg-surface-container p-7 rounded-2xl border border-outline-variant/60 space-y-4 flex flex-col justify-between apothecary-border">
+<div class="space-y-3">
+<div class="flex text-primary text-xs">★★★★★</div>
+<p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed italic">
+                "El jabón de Luna con carbón y eucalipto es un bálsamo sombrío tras días agotadores. La curvatura es comodísima en la piel y el aroma tiene una profundidad boscosa que limpia la mente. La caja ya floreció en mi ventana."
+              </p>
+</div>
+<div class="pt-3 border-t border-outline-variant/40">
+<h4 class="text-xs font-serif font-semibold text-primary">Camila Valenzuela</h4>
+<p class="text-[11px] font-label text-on-surface-variant/60">Colección Luna (Charcoal) • Santiago</p>
+</div>
+</article>
+<!-- Testimonial 2 -->
+<article class="bg-surface-container p-7 rounded-2xl border border-outline-variant/60 space-y-4 flex flex-col justify-between apothecary-border">
+<div class="space-y-3">
+<div class="flex text-primary text-xs">★★★★★</div>
+<p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed italic">
+                "La silueta de Flor es una reliquia tallada. La lavanda huele a cosecha viva de herbolaria, no a perfume comercial sintético. Es una joya táctil que adorna y calma el baño."
+              </p>
+</div>
+<div class="pt-3 border-t border-outline-variant/40">
+<h4 class="text-xs font-serif font-semibold text-primary">Mateo Arismendi</h4>
+<p class="text-[11px] font-label text-on-surface-variant/60">Colección Flor • Bogotá</p>
+</div>
+</article>
+<!-- Testimonial 3 -->
+<article class="bg-surface-container p-7 rounded-2xl border border-outline-variant/60 space-y-4 flex flex-col justify-between apothecary-border">
+<div class="space-y-3">
+<div class="flex text-primary text-xs">★★★★★</div>
+<p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed italic">
+                "Consistencia inquebrantable: tras mes y medio de uso diario, la barra no pierde forma ni se ablanda. Mi piel reactiva se reconcilió por fin al olvidar los sulfatos."
+              </p>
+</div>
+<div class="pt-3 border-t border-outline-variant/40">
+<h4 class="text-xs font-serif font-semibold text-primary">Valentina De la Torre</h4>
+<p class="text-[11px] font-label text-on-surface-variant/60">Colección Gota (Aloe) • CDMX</p>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- END: SocialProof -->
+</main>
+<!-- BEGIN: SiteFooter -->
+<footer class="bg-surface-container-lowest pt-16 pb-12 border-t border-outline-variant/40" data-purpose="site-footer">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Top Row: Newsletter / Club Verde -->
+<div class="bg-surface-container-low p-8 sm:p-10 rounded-2xl border border-outline-variant/70 mb-16 apothecary-border">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<div class="lg:col-span-7 space-y-2">
+<span class="text-xs font-label uppercase tracking-[0.24em] font-semibold text-primary">Confraternidad Botánica</span>
+<h3 class="font-serif text-2xl sm:text-3xl font-normal text-on-surface">Círculo Nocturno Aura: 15% de gracia en tu primer ritual</h3>
+<p class="text-xs text-on-surface-variant/80 font-light">Recibe manuscritos de fitoterapia mística, anuncios de cosechas estacionales y elixires de tirada reducida.</p>
+</div>
+<div class="lg:col-span-5">
+<form class="flex flex-col sm:flex-row gap-2" onsubmit="event.preventDefault();">
+<input class="px-4 py-3 text-xs rounded-full border border-outline-variant focus:ring-1 focus:ring-primary focus:border-primary flex-1 bg-surface-container text-on-surface placeholder-on-surface-variant/50 font-sans" placeholder="Ingresa tu correo arcano..." type="email"/>
+<button class="btn-gold px-6 py-3 rounded-full text-xs font-label uppercase tracking-widest font-bold whitespace-nowrap" type="submit">
+                Inscribirme
+              </button>
+</form>
+</div>
+</div>
+</div>
+<!-- Middle Row: Links & Brand Values -->
+<div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12 text-xs">
+<div class="col-span-2 space-y-3">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full border border-primary/40 flex items-center justify-center">
+<svg class="w-3.5 h-3.5 text-primary" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
+</svg>
+</div>
+<span class="font-gothic text-xl tracking-[0.16em] uppercase font-bold text-primary">Aura Bio</span>
+</div>
+<p class="text-on-surface-variant/70 max-w-sm font-light leading-relaxed">
+            Gabinete botánico independiente dedicado a revivir la cosmética arquetípica mediante saponificación en frío y devoción absoluta por el equilibrio de la tierra.
+          </p>
+<!-- Social Icons Placeholder -->
+<div class="flex space-x-4 pt-2 text-primary">
+<a aria-label="Instagram" class="hover:text-primary/70 transition-colors" href="#">
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+<a aria-label="Pinterest" class="hover:text-primary/70 transition-colors" href="#">
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345-.09.375-.291 1.199-.334 1.357-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"></path></svg>
+</a>
+</div>
+</div>
+<!-- Links Column 1 -->
+<div class="space-y-2">
+<p class="font-label font-bold text-primary uppercase tracking-[0.2em] text-[10px]">Colecciones</p>
+<ul class="space-y-1.5 text-on-surface-variant/70 font-sans text-xs">
+<li><a class="hover:text-primary transition-colors" href="#">Colección Luna</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Colección Flor</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Colección Corazón</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Colección Estrella</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Colección Gota</a></li>
+</ul>
+</div>
+<!-- Links Column 2 -->
+<div class="space-y-2">
+<p class="font-label font-bold text-primary uppercase tracking-[0.2em] text-[10px]">Herbolaria Arcana</p>
+<ul class="space-y-1.5 text-on-surface-variant/70 font-sans text-xs">
+<li><a class="hover:text-primary transition-colors" href="#">Grimorio Botánico</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Semillas &amp; Siembra</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Maceraciones en Frío</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Ingredientes Silvestres</a></li>
+</ul>
+</div>
+<!-- Links Column 3 -->
+<div class="space-y-2">
+<p class="font-label font-bold text-primary uppercase tracking-[0.2em] text-[10px]">Atención &amp; Guía</p>
+<ul class="space-y-1.5 text-on-surface-variant/70 font-sans text-xs">
+<li><a class="hover:text-primary transition-colors" href="#">Envíos y Despachos</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Preguntas Frecuentes</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Términos del Ritual</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Privacidad</a></li>
+</ul>
+</div>
+</div>
+<!-- Bottom Badges / Certifications -->
+<div class="pt-8 border-t border-outline-variant/40 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] text-on-surface-variant/60 font-sans">
+<div class="flex items-center gap-3 flex-wrap">
+<span class="inline-flex items-center gap-1 border border-outline-variant/60 px-3 py-1 rounded-full bg-surface-container font-medium text-primary">🌿 B-Corp Pending</span>
+<span class="inline-flex items-center gap-1 border border-outline-variant/60 px-3 py-1 rounded-full bg-surface-container font-medium text-primary">🐇 Leaping Bunny Certified</span>
+<span class="inline-flex items-center gap-1 border border-outline-variant/60 px-3 py-1 rounded-full bg-surface-container font-medium text-primary">✨ COSMOS Organic</span>
+</div>
+<p>© 2024 Aura Bio Boticario S.A. Todos los derechos reservados. Consagrado artesanalmente.</p>
+</div>
+</div>
+</footer>
+<!-- END: SiteFooter -->
+<!-- Simple JavaScript for Interactive Tab Switching Simulation -->
+<script data-purpose="tabs-interaction">
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabButtons = document.querySelectorAll('#colecciones button');
+      tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          tabButtons.forEach(b => {
+            b.classList.remove('bg-primary', 'text-on-primary', 'font-bold');
+            b.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+          });
+          btn.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+          btn.classList.add('bg-primary', 'text-on-primary', 'font-bold');
+        });
+      });
+    });
+  </script>
+</body></html>
